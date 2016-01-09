@@ -9,7 +9,7 @@ RSpec.describe "StaticPages", type: :request do
   end
 
   describe "Help Page" do
-     it "should jave the content 'Help'" do
+     it "should jave the content 'Help' - is located in h1 tag" do
        visit '/static_pages/help'
        expect(page).to have_content('Help')
      end
