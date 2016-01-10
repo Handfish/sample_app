@@ -24,6 +24,11 @@ RSpec.describe "StaticPages", type: :request do
        visit '/static_pages/help'
        expect(page).to have_content('Help')
      end
+
+     it "should have the h1 'Help'" do
+       visit '/static_pages/help'
+       expect((page).find('h1')).to have_content 'Help'
+     end
   end
 
   describe "About page" do
@@ -31,6 +36,23 @@ RSpec.describe "StaticPages", type: :request do
        visit '/static_pages/about'
        expect(page).to have_content('About Us')
      end
+
+     it "should have the h1 'About'" do
+       visit '/static_pages/about'
+       expect((page).find('h1')).to have_content 'About'
+     end
   end
   
+  describe "Contact page" do
+     it "should have the content 'Contact Us'" do
+       visit '/static_pages/contact'
+       expect(page).to have_content('Contact Us')
+     end
+
+     it "should have the h1 'Contact'" do
+       visit '/static_pages/contact'
+       expect((page).find('h1')).to have_content 'Contact'
+     end
+  end
+
 end
